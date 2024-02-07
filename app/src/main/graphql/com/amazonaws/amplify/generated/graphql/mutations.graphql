@@ -1,0 +1,160 @@
+# this is an auto generated file. This will be overwritten
+
+mutation CreatePatient(
+  $input: CreatePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  createPatient(input: $input, condition: $condition) {
+    ssn
+    givenName
+    familyName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdatePatient(
+  $input: UpdatePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  updatePatient(input: $input, condition: $condition) {
+    ssn
+    givenName
+    familyName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeletePatient(
+  $input: DeletePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  deletePatient(input: $input, condition: $condition) {
+    ssn
+    givenName
+    familyName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateMedicalAppointment(
+  $input: CreateMedicalAppointmentInput!
+  $condition: ModelMedicalAppointmentConditionInput
+) {
+  createMedicalAppointment(input: $input, condition: $condition) {
+    appointmentReference
+    patient {
+      ssn
+      givenName
+      familyName
+      createdAt
+      updatedAt
+      __typename
+    }
+    provider
+    date
+    createdAt
+    updatedAt
+    medicalAppointmentPatientSsn
+    medicalAppointmentPatientGivenName
+    medicalAppointmentPatientFamilyName
+    __typename
+  }
+}
+
+mutation UpdateMedicalAppointment(
+  $input: UpdateMedicalAppointmentInput!
+  $condition: ModelMedicalAppointmentConditionInput
+) {
+  updateMedicalAppointment(input: $input, condition: $condition) {
+    appointmentReference
+    patient {
+      ssn
+      givenName
+      familyName
+      createdAt
+      updatedAt
+      __typename
+    }
+    provider
+    date
+    createdAt
+    updatedAt
+    medicalAppointmentPatientSsn
+    medicalAppointmentPatientGivenName
+    medicalAppointmentPatientFamilyName
+    __typename
+  }
+}
+
+mutation DeleteMedicalAppointment(
+  $input: DeleteMedicalAppointmentInput!
+  $condition: ModelMedicalAppointmentConditionInput
+) {
+  deleteMedicalAppointment(input: $input, condition: $condition) {
+    appointmentReference
+    patient {
+      ssn
+      givenName
+      familyName
+      createdAt
+      updatedAt
+      __typename
+    }
+    provider
+    date
+    createdAt
+    updatedAt
+    medicalAppointmentPatientSsn
+    medicalAppointmentPatientGivenName
+    medicalAppointmentPatientFamilyName
+    __typename
+  }
+}
+
+mutation CreateTodo(
+  $input: CreateTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  createTodo(input: $input, condition: $condition) {
+    content
+    id
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation UpdateTodo(
+  $input: UpdateTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  updateTodo(input: $input, condition: $condition) {
+    content
+    id
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation DeleteTodo(
+  $input: DeleteTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  deleteTodo(input: $input, condition: $condition) {
+    content
+    id
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
