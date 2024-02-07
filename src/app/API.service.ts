@@ -31,47 +31,8 @@ export type ModelPatientConditionInput = {
   and?: Array<ModelPatientConditionInput | null> | null;
   or?: Array<ModelPatientConditionInput | null> | null;
   not?: ModelPatientConditionInput | null;
-};
-
-export type Patient = {
-  __typename: "Patient";
-  ssn: string;
-  givenName: string;
-  familyName: string;
-  createdAt: string;
-  updatedAt: string;
-};
-
-export type UpdatePatientInput = {
-  ssn: string;
-  givenName: string;
-  familyName: string;
-};
-
-export type DeletePatientInput = {
-  ssn: string;
-  givenName: string;
-  familyName: string;
-};
-
-export type CreateMedicalAppointmentInput = {
-  appointmentReference: string;
-  provider?: string | null;
-  date?: string | null;
-  medicalAppointmentPatientSsn?: string | null;
-  medicalAppointmentPatientGivenName?: string | null;
-  medicalAppointmentPatientFamilyName?: string | null;
-};
-
-export type ModelMedicalAppointmentConditionInput = {
-  provider?: ModelStringInput | null;
-  date?: ModelStringInput | null;
-  and?: Array<ModelMedicalAppointmentConditionInput | null> | null;
-  or?: Array<ModelMedicalAppointmentConditionInput | null> | null;
-  not?: ModelMedicalAppointmentConditionInput | null;
-  medicalAppointmentPatientSsn?: ModelIDInput | null;
-  medicalAppointmentPatientGivenName?: ModelStringInput | null;
-  medicalAppointmentPatientFamilyName?: ModelStringInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
 };
 
 export type ModelStringInput = {
@@ -111,6 +72,49 @@ export type ModelSizeInput = {
   ge?: number | null;
   gt?: number | null;
   between?: Array<number | null> | null;
+};
+
+export type Patient = {
+  __typename: "Patient";
+  ssn: string;
+  givenName: string;
+  familyName: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdatePatientInput = {
+  ssn: string;
+  givenName: string;
+  familyName: string;
+};
+
+export type DeletePatientInput = {
+  ssn: string;
+  givenName: string;
+  familyName: string;
+};
+
+export type CreateMedicalAppointmentInput = {
+  appointmentReference: string;
+  provider?: string | null;
+  date?: string | null;
+  medicalAppointmentPatientSsn?: string | null;
+  medicalAppointmentPatientGivenName?: string | null;
+  medicalAppointmentPatientFamilyName?: string | null;
+};
+
+export type ModelMedicalAppointmentConditionInput = {
+  provider?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  and?: Array<ModelMedicalAppointmentConditionInput | null> | null;
+  or?: Array<ModelMedicalAppointmentConditionInput | null> | null;
+  not?: ModelMedicalAppointmentConditionInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
+  medicalAppointmentPatientSsn?: ModelIDInput | null;
+  medicalAppointmentPatientGivenName?: ModelStringInput | null;
+  medicalAppointmentPatientFamilyName?: ModelStringInput | null;
 };
 
 export type ModelIDInput = {
@@ -165,6 +169,9 @@ export type ModelTodoConditionInput = {
   and?: Array<ModelTodoConditionInput | null> | null;
   or?: Array<ModelTodoConditionInput | null> | null;
   not?: ModelTodoConditionInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
+  owner?: ModelStringInput | null;
 };
 
 export type Todo = {
@@ -207,6 +214,8 @@ export type ModelPatientFilterInput = {
   and?: Array<ModelPatientFilterInput | null> | null;
   or?: Array<ModelPatientFilterInput | null> | null;
   not?: ModelPatientFilterInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
 };
 
 export enum ModelSortDirection {
@@ -227,6 +236,8 @@ export type ModelMedicalAppointmentFilterInput = {
   and?: Array<ModelMedicalAppointmentFilterInput | null> | null;
   or?: Array<ModelMedicalAppointmentFilterInput | null> | null;
   not?: ModelMedicalAppointmentFilterInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
   medicalAppointmentPatientSsn?: ModelIDInput | null;
   medicalAppointmentPatientGivenName?: ModelStringInput | null;
   medicalAppointmentPatientFamilyName?: ModelStringInput | null;
@@ -243,6 +254,9 @@ export type ModelTodoFilterInput = {
   and?: Array<ModelTodoFilterInput | null> | null;
   or?: Array<ModelTodoFilterInput | null> | null;
   not?: ModelTodoFilterInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
+  owner?: ModelStringInput | null;
 };
 
 export type ModelTodoConnection = {
@@ -257,6 +271,8 @@ export type ModelSubscriptionPatientFilterInput = {
   familyName?: ModelSubscriptionStringInput | null;
   and?: Array<ModelSubscriptionPatientFilterInput | null> | null;
   or?: Array<ModelSubscriptionPatientFilterInput | null> | null;
+  createdAt?: ModelSubscriptionStringInput | null;
+  updatedAt?: ModelSubscriptionStringInput | null;
 };
 
 export type ModelSubscriptionIDInput = {
@@ -295,12 +311,20 @@ export type ModelSubscriptionMedicalAppointmentFilterInput = {
   date?: ModelSubscriptionStringInput | null;
   and?: Array<ModelSubscriptionMedicalAppointmentFilterInput | null> | null;
   or?: Array<ModelSubscriptionMedicalAppointmentFilterInput | null> | null;
+  createdAt?: ModelSubscriptionStringInput | null;
+  updatedAt?: ModelSubscriptionStringInput | null;
+  medicalAppointmentPatientSsn?: ModelIDInput | null;
+  medicalAppointmentPatientGivenName?: ModelStringInput | null;
+  medicalAppointmentPatientFamilyName?: ModelStringInput | null;
 };
 
 export type ModelSubscriptionTodoFilterInput = {
   content?: ModelSubscriptionStringInput | null;
   and?: Array<ModelSubscriptionTodoFilterInput | null> | null;
   or?: Array<ModelSubscriptionTodoFilterInput | null> | null;
+  createdAt?: ModelSubscriptionStringInput | null;
+  updatedAt?: ModelSubscriptionStringInput | null;
+  owner?: ModelStringInput | null;
 };
 
 export type CreatePatientMutation = {
