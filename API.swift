@@ -460,8 +460,8 @@ public struct CreatePatientInput: GraphQLMapConvertible {
 public struct ModelPatientConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(and: [ModelPatientConditionInput?]? = nil, or: [ModelPatientConditionInput?]? = nil, not: ModelPatientConditionInput? = nil) {
-    graphQLMap = ["and": and, "or": or, "not": not]
+  public init(and: [ModelPatientConditionInput?]? = nil, or: [ModelPatientConditionInput?]? = nil, not: ModelPatientConditionInput? = nil, createdAt: ModelStringInput? = nil, updatedAt: ModelStringInput? = nil) {
+    graphQLMap = ["and": and, "or": or, "not": not, "createdAt": createdAt, "updatedAt": updatedAt]
   }
 
   public var and: [ModelPatientConditionInput?]? {
@@ -490,216 +490,22 @@ public struct ModelPatientConditionInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "not")
     }
   }
-}
 
-public struct UpdatePatientInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(ssn: GraphQLID, givenName: String, familyName: String) {
-    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName]
-  }
-
-  public var ssn: GraphQLID {
+  public var createdAt: ModelStringInput? {
     get {
-      return graphQLMap["ssn"] as! GraphQLID
+      return graphQLMap["createdAt"] as! ModelStringInput?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "ssn")
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
     }
   }
 
-  public var givenName: String {
+  public var updatedAt: ModelStringInput? {
     get {
-      return graphQLMap["givenName"] as! String
+      return graphQLMap["updatedAt"] as! ModelStringInput?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "givenName")
-    }
-  }
-
-  public var familyName: String {
-    get {
-      return graphQLMap["familyName"] as! String
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "familyName")
-    }
-  }
-}
-
-public struct DeletePatientInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(ssn: GraphQLID, givenName: String, familyName: String) {
-    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName]
-  }
-
-  public var ssn: GraphQLID {
-    get {
-      return graphQLMap["ssn"] as! GraphQLID
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "ssn")
-    }
-  }
-
-  public var givenName: String {
-    get {
-      return graphQLMap["givenName"] as! String
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "givenName")
-    }
-  }
-
-  public var familyName: String {
-    get {
-      return graphQLMap["familyName"] as! String
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "familyName")
-    }
-  }
-}
-
-public struct CreateMedicalAppointmentInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(appointmentReference: GraphQLID, provider: String? = nil, date: String? = nil, medicalAppointmentPatientSsn: GraphQLID? = nil, medicalAppointmentPatientGivenName: String? = nil, medicalAppointmentPatientFamilyName: String? = nil) {
-    graphQLMap = ["appointmentReference": appointmentReference, "provider": provider, "date": date, "medicalAppointmentPatientSsn": medicalAppointmentPatientSsn, "medicalAppointmentPatientGivenName": medicalAppointmentPatientGivenName, "medicalAppointmentPatientFamilyName": medicalAppointmentPatientFamilyName]
-  }
-
-  public var appointmentReference: GraphQLID {
-    get {
-      return graphQLMap["appointmentReference"] as! GraphQLID
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "appointmentReference")
-    }
-  }
-
-  public var provider: String? {
-    get {
-      return graphQLMap["provider"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "provider")
-    }
-  }
-
-  public var date: String? {
-    get {
-      return graphQLMap["date"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "date")
-    }
-  }
-
-  public var medicalAppointmentPatientSsn: GraphQLID? {
-    get {
-      return graphQLMap["medicalAppointmentPatientSsn"] as! GraphQLID?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientSsn")
-    }
-  }
-
-  public var medicalAppointmentPatientGivenName: String? {
-    get {
-      return graphQLMap["medicalAppointmentPatientGivenName"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientGivenName")
-    }
-  }
-
-  public var medicalAppointmentPatientFamilyName: String? {
-    get {
-      return graphQLMap["medicalAppointmentPatientFamilyName"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientFamilyName")
-    }
-  }
-}
-
-public struct ModelMedicalAppointmentConditionInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(provider: ModelStringInput? = nil, date: ModelStringInput? = nil, and: [ModelMedicalAppointmentConditionInput?]? = nil, or: [ModelMedicalAppointmentConditionInput?]? = nil, not: ModelMedicalAppointmentConditionInput? = nil, medicalAppointmentPatientSsn: ModelIDInput? = nil, medicalAppointmentPatientGivenName: ModelStringInput? = nil, medicalAppointmentPatientFamilyName: ModelStringInput? = nil) {
-    graphQLMap = ["provider": provider, "date": date, "and": and, "or": or, "not": not, "medicalAppointmentPatientSsn": medicalAppointmentPatientSsn, "medicalAppointmentPatientGivenName": medicalAppointmentPatientGivenName, "medicalAppointmentPatientFamilyName": medicalAppointmentPatientFamilyName]
-  }
-
-  public var provider: ModelStringInput? {
-    get {
-      return graphQLMap["provider"] as! ModelStringInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "provider")
-    }
-  }
-
-  public var date: ModelStringInput? {
-    get {
-      return graphQLMap["date"] as! ModelStringInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "date")
-    }
-  }
-
-  public var and: [ModelMedicalAppointmentConditionInput?]? {
-    get {
-      return graphQLMap["and"] as! [ModelMedicalAppointmentConditionInput?]?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "and")
-    }
-  }
-
-  public var or: [ModelMedicalAppointmentConditionInput?]? {
-    get {
-      return graphQLMap["or"] as! [ModelMedicalAppointmentConditionInput?]?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "or")
-    }
-  }
-
-  public var not: ModelMedicalAppointmentConditionInput? {
-    get {
-      return graphQLMap["not"] as! ModelMedicalAppointmentConditionInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "not")
-    }
-  }
-
-  public var medicalAppointmentPatientSsn: ModelIDInput? {
-    get {
-      return graphQLMap["medicalAppointmentPatientSsn"] as! ModelIDInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientSsn")
-    }
-  }
-
-  public var medicalAppointmentPatientGivenName: ModelStringInput? {
-    get {
-      return graphQLMap["medicalAppointmentPatientGivenName"] as! ModelStringInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientGivenName")
-    }
-  }
-
-  public var medicalAppointmentPatientFamilyName: ModelStringInput? {
-    get {
-      return graphQLMap["medicalAppointmentPatientFamilyName"] as! ModelStringInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientFamilyName")
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
     }
   }
 }
@@ -965,6 +771,236 @@ public struct ModelSizeInput: GraphQLMapConvertible {
   }
 }
 
+public struct UpdatePatientInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(ssn: GraphQLID, givenName: String, familyName: String) {
+    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName]
+  }
+
+  public var ssn: GraphQLID {
+    get {
+      return graphQLMap["ssn"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ssn")
+    }
+  }
+
+  public var givenName: String {
+    get {
+      return graphQLMap["givenName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "givenName")
+    }
+  }
+
+  public var familyName: String {
+    get {
+      return graphQLMap["familyName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "familyName")
+    }
+  }
+}
+
+public struct DeletePatientInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(ssn: GraphQLID, givenName: String, familyName: String) {
+    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName]
+  }
+
+  public var ssn: GraphQLID {
+    get {
+      return graphQLMap["ssn"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ssn")
+    }
+  }
+
+  public var givenName: String {
+    get {
+      return graphQLMap["givenName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "givenName")
+    }
+  }
+
+  public var familyName: String {
+    get {
+      return graphQLMap["familyName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "familyName")
+    }
+  }
+}
+
+public struct CreateMedicalAppointmentInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(appointmentReference: GraphQLID, provider: String? = nil, date: String? = nil, medicalAppointmentPatientSsn: GraphQLID? = nil, medicalAppointmentPatientGivenName: String? = nil, medicalAppointmentPatientFamilyName: String? = nil) {
+    graphQLMap = ["appointmentReference": appointmentReference, "provider": provider, "date": date, "medicalAppointmentPatientSsn": medicalAppointmentPatientSsn, "medicalAppointmentPatientGivenName": medicalAppointmentPatientGivenName, "medicalAppointmentPatientFamilyName": medicalAppointmentPatientFamilyName]
+  }
+
+  public var appointmentReference: GraphQLID {
+    get {
+      return graphQLMap["appointmentReference"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "appointmentReference")
+    }
+  }
+
+  public var provider: String? {
+    get {
+      return graphQLMap["provider"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "provider")
+    }
+  }
+
+  public var date: String? {
+    get {
+      return graphQLMap["date"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "date")
+    }
+  }
+
+  public var medicalAppointmentPatientSsn: GraphQLID? {
+    get {
+      return graphQLMap["medicalAppointmentPatientSsn"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientSsn")
+    }
+  }
+
+  public var medicalAppointmentPatientGivenName: String? {
+    get {
+      return graphQLMap["medicalAppointmentPatientGivenName"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientGivenName")
+    }
+  }
+
+  public var medicalAppointmentPatientFamilyName: String? {
+    get {
+      return graphQLMap["medicalAppointmentPatientFamilyName"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientFamilyName")
+    }
+  }
+}
+
+public struct ModelMedicalAppointmentConditionInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(provider: ModelStringInput? = nil, date: ModelStringInput? = nil, and: [ModelMedicalAppointmentConditionInput?]? = nil, or: [ModelMedicalAppointmentConditionInput?]? = nil, not: ModelMedicalAppointmentConditionInput? = nil, createdAt: ModelStringInput? = nil, updatedAt: ModelStringInput? = nil, medicalAppointmentPatientSsn: ModelIDInput? = nil, medicalAppointmentPatientGivenName: ModelStringInput? = nil, medicalAppointmentPatientFamilyName: ModelStringInput? = nil) {
+    graphQLMap = ["provider": provider, "date": date, "and": and, "or": or, "not": not, "createdAt": createdAt, "updatedAt": updatedAt, "medicalAppointmentPatientSsn": medicalAppointmentPatientSsn, "medicalAppointmentPatientGivenName": medicalAppointmentPatientGivenName, "medicalAppointmentPatientFamilyName": medicalAppointmentPatientFamilyName]
+  }
+
+  public var provider: ModelStringInput? {
+    get {
+      return graphQLMap["provider"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "provider")
+    }
+  }
+
+  public var date: ModelStringInput? {
+    get {
+      return graphQLMap["date"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "date")
+    }
+  }
+
+  public var and: [ModelMedicalAppointmentConditionInput?]? {
+    get {
+      return graphQLMap["and"] as! [ModelMedicalAppointmentConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "and")
+    }
+  }
+
+  public var or: [ModelMedicalAppointmentConditionInput?]? {
+    get {
+      return graphQLMap["or"] as! [ModelMedicalAppointmentConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var not: ModelMedicalAppointmentConditionInput? {
+    get {
+      return graphQLMap["not"] as! ModelMedicalAppointmentConditionInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "not")
+    }
+  }
+
+  public var createdAt: ModelStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
+
+  public var medicalAppointmentPatientSsn: ModelIDInput? {
+    get {
+      return graphQLMap["medicalAppointmentPatientSsn"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientSsn")
+    }
+  }
+
+  public var medicalAppointmentPatientGivenName: ModelStringInput? {
+    get {
+      return graphQLMap["medicalAppointmentPatientGivenName"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientGivenName")
+    }
+  }
+
+  public var medicalAppointmentPatientFamilyName: ModelStringInput? {
+    get {
+      return graphQLMap["medicalAppointmentPatientFamilyName"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientFamilyName")
+    }
+  }
+}
+
 public struct ModelIDInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -1198,8 +1234,8 @@ public struct CreateTodoInput: GraphQLMapConvertible {
 public struct ModelTodoConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(content: ModelStringInput? = nil, and: [ModelTodoConditionInput?]? = nil, or: [ModelTodoConditionInput?]? = nil, not: ModelTodoConditionInput? = nil) {
-    graphQLMap = ["content": content, "and": and, "or": or, "not": not]
+  public init(content: ModelStringInput? = nil, and: [ModelTodoConditionInput?]? = nil, or: [ModelTodoConditionInput?]? = nil, not: ModelTodoConditionInput? = nil, createdAt: ModelStringInput? = nil, updatedAt: ModelStringInput? = nil, owner: ModelStringInput? = nil) {
+    graphQLMap = ["content": content, "and": and, "or": or, "not": not, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner]
   }
 
   public var content: ModelStringInput? {
@@ -1235,6 +1271,33 @@ public struct ModelTodoConditionInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "not")
+    }
+  }
+
+  public var createdAt: ModelStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
+
+  public var owner: ModelStringInput? {
+    get {
+      return graphQLMap["owner"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "owner")
     }
   }
 }
@@ -1382,8 +1445,8 @@ public struct ModelPatientPrimaryCompositeKeyInput: GraphQLMapConvertible {
 public struct ModelPatientFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(ssn: ModelIDInput? = nil, givenName: ModelStringInput? = nil, familyName: ModelStringInput? = nil, and: [ModelPatientFilterInput?]? = nil, or: [ModelPatientFilterInput?]? = nil, not: ModelPatientFilterInput? = nil) {
-    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName, "and": and, "or": or, "not": not]
+  public init(ssn: ModelIDInput? = nil, givenName: ModelStringInput? = nil, familyName: ModelStringInput? = nil, and: [ModelPatientFilterInput?]? = nil, or: [ModelPatientFilterInput?]? = nil, not: ModelPatientFilterInput? = nil, createdAt: ModelStringInput? = nil, updatedAt: ModelStringInput? = nil) {
+    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName, "and": and, "or": or, "not": not, "createdAt": createdAt, "updatedAt": updatedAt]
   }
 
   public var ssn: ModelIDInput? {
@@ -1439,6 +1502,24 @@ public struct ModelPatientFilterInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "not")
     }
   }
+
+  public var createdAt: ModelStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
 }
 
 public enum ModelSortDirection: RawRepresentable, Equatable, JSONDecodable, JSONEncodable {
@@ -1477,8 +1558,8 @@ public enum ModelSortDirection: RawRepresentable, Equatable, JSONDecodable, JSON
 public struct ModelMedicalAppointmentFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(appointmentReference: ModelIDInput? = nil, provider: ModelStringInput? = nil, date: ModelStringInput? = nil, and: [ModelMedicalAppointmentFilterInput?]? = nil, or: [ModelMedicalAppointmentFilterInput?]? = nil, not: ModelMedicalAppointmentFilterInput? = nil, medicalAppointmentPatientSsn: ModelIDInput? = nil, medicalAppointmentPatientGivenName: ModelStringInput? = nil, medicalAppointmentPatientFamilyName: ModelStringInput? = nil) {
-    graphQLMap = ["appointmentReference": appointmentReference, "provider": provider, "date": date, "and": and, "or": or, "not": not, "medicalAppointmentPatientSsn": medicalAppointmentPatientSsn, "medicalAppointmentPatientGivenName": medicalAppointmentPatientGivenName, "medicalAppointmentPatientFamilyName": medicalAppointmentPatientFamilyName]
+  public init(appointmentReference: ModelIDInput? = nil, provider: ModelStringInput? = nil, date: ModelStringInput? = nil, and: [ModelMedicalAppointmentFilterInput?]? = nil, or: [ModelMedicalAppointmentFilterInput?]? = nil, not: ModelMedicalAppointmentFilterInput? = nil, createdAt: ModelStringInput? = nil, updatedAt: ModelStringInput? = nil, medicalAppointmentPatientSsn: ModelIDInput? = nil, medicalAppointmentPatientGivenName: ModelStringInput? = nil, medicalAppointmentPatientFamilyName: ModelStringInput? = nil) {
+    graphQLMap = ["appointmentReference": appointmentReference, "provider": provider, "date": date, "and": and, "or": or, "not": not, "createdAt": createdAt, "updatedAt": updatedAt, "medicalAppointmentPatientSsn": medicalAppointmentPatientSsn, "medicalAppointmentPatientGivenName": medicalAppointmentPatientGivenName, "medicalAppointmentPatientFamilyName": medicalAppointmentPatientFamilyName]
   }
 
   public var appointmentReference: ModelIDInput? {
@@ -1535,6 +1616,24 @@ public struct ModelMedicalAppointmentFilterInput: GraphQLMapConvertible {
     }
   }
 
+  public var createdAt: ModelStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
+
   public var medicalAppointmentPatientSsn: ModelIDInput? {
     get {
       return graphQLMap["medicalAppointmentPatientSsn"] as! ModelIDInput?
@@ -1566,8 +1665,8 @@ public struct ModelMedicalAppointmentFilterInput: GraphQLMapConvertible {
 public struct ModelTodoFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(content: ModelStringInput? = nil, and: [ModelTodoFilterInput?]? = nil, or: [ModelTodoFilterInput?]? = nil, not: ModelTodoFilterInput? = nil) {
-    graphQLMap = ["content": content, "and": and, "or": or, "not": not]
+  public init(content: ModelStringInput? = nil, and: [ModelTodoFilterInput?]? = nil, or: [ModelTodoFilterInput?]? = nil, not: ModelTodoFilterInput? = nil, createdAt: ModelStringInput? = nil, updatedAt: ModelStringInput? = nil, owner: ModelStringInput? = nil) {
+    graphQLMap = ["content": content, "and": and, "or": or, "not": not, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner]
   }
 
   public var content: ModelStringInput? {
@@ -1605,13 +1704,40 @@ public struct ModelTodoFilterInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "not")
     }
   }
+
+  public var createdAt: ModelStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
+
+  public var owner: ModelStringInput? {
+    get {
+      return graphQLMap["owner"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "owner")
+    }
+  }
 }
 
 public struct ModelSubscriptionPatientFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(ssn: ModelSubscriptionIDInput? = nil, givenName: ModelSubscriptionStringInput? = nil, familyName: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionPatientFilterInput?]? = nil, or: [ModelSubscriptionPatientFilterInput?]? = nil) {
-    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName, "and": and, "or": or]
+  public init(ssn: ModelSubscriptionIDInput? = nil, givenName: ModelSubscriptionStringInput? = nil, familyName: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionPatientFilterInput?]? = nil, or: [ModelSubscriptionPatientFilterInput?]? = nil, createdAt: ModelSubscriptionStringInput? = nil, updatedAt: ModelSubscriptionStringInput? = nil) {
+    graphQLMap = ["ssn": ssn, "givenName": givenName, "familyName": familyName, "and": and, "or": or, "createdAt": createdAt, "updatedAt": updatedAt]
   }
 
   public var ssn: ModelSubscriptionIDInput? {
@@ -1656,6 +1782,24 @@ public struct ModelSubscriptionPatientFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var createdAt: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
     }
   }
 }
@@ -1895,8 +2039,8 @@ public struct ModelSubscriptionStringInput: GraphQLMapConvertible {
 public struct ModelSubscriptionMedicalAppointmentFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(appointmentReference: ModelSubscriptionIDInput? = nil, provider: ModelSubscriptionStringInput? = nil, date: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionMedicalAppointmentFilterInput?]? = nil, or: [ModelSubscriptionMedicalAppointmentFilterInput?]? = nil) {
-    graphQLMap = ["appointmentReference": appointmentReference, "provider": provider, "date": date, "and": and, "or": or]
+  public init(appointmentReference: ModelSubscriptionIDInput? = nil, provider: ModelSubscriptionStringInput? = nil, date: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionMedicalAppointmentFilterInput?]? = nil, or: [ModelSubscriptionMedicalAppointmentFilterInput?]? = nil, createdAt: ModelSubscriptionStringInput? = nil, updatedAt: ModelSubscriptionStringInput? = nil, medicalAppointmentPatientSsn: ModelIDInput? = nil, medicalAppointmentPatientGivenName: ModelStringInput? = nil, medicalAppointmentPatientFamilyName: ModelStringInput? = nil) {
+    graphQLMap = ["appointmentReference": appointmentReference, "provider": provider, "date": date, "and": and, "or": or, "createdAt": createdAt, "updatedAt": updatedAt, "medicalAppointmentPatientSsn": medicalAppointmentPatientSsn, "medicalAppointmentPatientGivenName": medicalAppointmentPatientGivenName, "medicalAppointmentPatientFamilyName": medicalAppointmentPatientFamilyName]
   }
 
   public var appointmentReference: ModelSubscriptionIDInput? {
@@ -1943,13 +2087,58 @@ public struct ModelSubscriptionMedicalAppointmentFilterInput: GraphQLMapConverti
       graphQLMap.updateValue(newValue, forKey: "or")
     }
   }
+
+  public var createdAt: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
+
+  public var medicalAppointmentPatientSsn: ModelIDInput? {
+    get {
+      return graphQLMap["medicalAppointmentPatientSsn"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientSsn")
+    }
+  }
+
+  public var medicalAppointmentPatientGivenName: ModelStringInput? {
+    get {
+      return graphQLMap["medicalAppointmentPatientGivenName"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientGivenName")
+    }
+  }
+
+  public var medicalAppointmentPatientFamilyName: ModelStringInput? {
+    get {
+      return graphQLMap["medicalAppointmentPatientFamilyName"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "medicalAppointmentPatientFamilyName")
+    }
+  }
 }
 
 public struct ModelSubscriptionTodoFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(content: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionTodoFilterInput?]? = nil, or: [ModelSubscriptionTodoFilterInput?]? = nil) {
-    graphQLMap = ["content": content, "and": and, "or": or]
+  public init(content: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionTodoFilterInput?]? = nil, or: [ModelSubscriptionTodoFilterInput?]? = nil, createdAt: ModelSubscriptionStringInput? = nil, updatedAt: ModelSubscriptionStringInput? = nil, owner: ModelStringInput? = nil) {
+    graphQLMap = ["content": content, "and": and, "or": or, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner]
   }
 
   public var content: ModelSubscriptionStringInput? {
@@ -1976,6 +2165,33 @@ public struct ModelSubscriptionTodoFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var createdAt: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["createdAt"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "createdAt")
+    }
+  }
+
+  public var updatedAt: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["updatedAt"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
+
+  public var owner: ModelStringInput? {
+    get {
+      return graphQLMap["owner"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "owner")
     }
   }
 }
