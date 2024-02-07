@@ -1,0 +1,16 @@
+type Todo @model @auth(rules: [{ allow: owner }]) {
+  content: String
+}
+
+type Patient @model {
+  ssn: ID! @primaryKey(sortKeyFields: ["givenName", "familyName"])
+  givenName: String!
+  familyName: String!
+}
+
+type MedicalAppointment @model {
+  appointmentReference: ID! @primaryKey
+  patient: Patient @hasOne
+  provider: String
+  date: AWSDateTime
+}
