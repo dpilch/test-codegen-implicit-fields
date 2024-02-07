@@ -1,15 +1,15 @@
 projects:
   Codegen Project:
-    schemaPath: newschema.graphql
+    schemaPath: oldschema.graphql
     includes:
-      - src/graphql/**/*.ts
+      - src/graphql/**/*.js
     excludes:
       - ./amplify/**
-      - src/API.ts
+      - src/API.js
     extensions:
       amplify:
-        codeGenTarget: typescript
-        generatedFileName: src/API.ts
+        codeGenTarget: flow
+        generatedFileName: src/API.js
         docsFilePath: src/graphql
         region: us-east-1
         apiId: null
