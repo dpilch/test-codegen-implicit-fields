@@ -1,6 +1,6 @@
 projects:
   Codegen Project:
-    schemaPath: schema.graphql
+    schemaPath: oldschema.graphql
     includes:
       - graphql/**/*.graphql
     excludes:
