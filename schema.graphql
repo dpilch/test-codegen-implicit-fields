@@ -186,9 +186,6 @@ input ModelTodoFilterInput {
   and: [ModelTodoFilterInput]
   or: [ModelTodoFilterInput]
   not: ModelTodoFilterInput
-  createdAt: ModelStringInput
-  updatedAt: ModelStringInput
-  owner: ModelStringInput
 }
 
 type Query {
@@ -205,9 +202,6 @@ input ModelTodoConditionInput {
   and: [ModelTodoConditionInput]
   or: [ModelTodoConditionInput]
   not: ModelTodoConditionInput
-  createdAt: ModelStringInput
-  updatedAt: ModelStringInput
-  owner: ModelStringInput
 }
 
 input CreateTodoInput {
@@ -240,9 +234,6 @@ input ModelSubscriptionTodoFilterInput {
   content: ModelSubscriptionStringInput
   and: [ModelSubscriptionTodoFilterInput]
   or: [ModelSubscriptionTodoFilterInput]
-  createdAt: ModelSubscriptionStringInput
-  updatedAt: ModelSubscriptionStringInput
-  owner: ModelStringInput
 }
 
 type Subscription {
@@ -269,16 +260,12 @@ input ModelPatientFilterInput {
   and: [ModelPatientFilterInput]
   or: [ModelPatientFilterInput]
   not: ModelPatientFilterInput
-  createdAt: ModelStringInput
-  updatedAt: ModelStringInput
 }
 
 input ModelPatientConditionInput {
   and: [ModelPatientConditionInput]
   or: [ModelPatientConditionInput]
   not: ModelPatientConditionInput
-  createdAt: ModelStringInput
-  updatedAt: ModelStringInput
 }
 
 input CreatePatientInput {
@@ -305,8 +292,6 @@ input ModelSubscriptionPatientFilterInput {
   familyName: ModelSubscriptionStringInput
   and: [ModelSubscriptionPatientFilterInput]
   or: [ModelSubscriptionPatientFilterInput]
-  createdAt: ModelSubscriptionStringInput
-  updatedAt: ModelSubscriptionStringInput
 }
 
 type ModelMedicalAppointmentConnection {
@@ -321,8 +306,6 @@ input ModelMedicalAppointmentFilterInput {
   and: [ModelMedicalAppointmentFilterInput]
   or: [ModelMedicalAppointmentFilterInput]
   not: ModelMedicalAppointmentFilterInput
-  createdAt: ModelStringInput
-  updatedAt: ModelStringInput
   medicalAppointmentPatientSsn: ModelIDInput
   medicalAppointmentPatientGivenName: ModelStringInput
   medicalAppointmentPatientFamilyName: ModelStringInput
@@ -334,8 +317,6 @@ input ModelMedicalAppointmentConditionInput {
   and: [ModelMedicalAppointmentConditionInput]
   or: [ModelMedicalAppointmentConditionInput]
   not: ModelMedicalAppointmentConditionInput
-  createdAt: ModelStringInput
-  updatedAt: ModelStringInput
   medicalAppointmentPatientSsn: ModelIDInput
   medicalAppointmentPatientGivenName: ModelStringInput
   medicalAppointmentPatientFamilyName: ModelStringInput
@@ -369,11 +350,6 @@ input ModelSubscriptionMedicalAppointmentFilterInput {
   date: ModelSubscriptionStringInput
   and: [ModelSubscriptionMedicalAppointmentFilterInput]
   or: [ModelSubscriptionMedicalAppointmentFilterInput]
-  createdAt: ModelSubscriptionStringInput
-  updatedAt: ModelSubscriptionStringInput
-  medicalAppointmentPatientSsn: ModelIDInput
-  medicalAppointmentPatientGivenName: ModelStringInput
-  medicalAppointmentPatientFamilyName: ModelStringInput
 }
 
 input ModelPatientPrimaryCompositeKeyConditionInput {
